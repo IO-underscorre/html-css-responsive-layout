@@ -1,9 +1,98 @@
+/* GENERAL */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Tahoma, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 ul , menu {
     list-style: none;
+}
+
+/* Container to horizontal align content */
+.align-box {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Flex container and items general rules */
+.col-container {
+    display: flex;
+    gap: 24px;
+}
+
+/* Visual buttons */
+.visual-button {
+    padding: .75em 1em;
+    border-radius: 2.5em;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.visual-button:hover {
+    box-shadow: 0 0 0.4em 0.2em #00000065;
+    filter: brightness(115%);
+}
+
+.visual-button:active {
+    box-shadow: inset 0 0 0.8em 0.4em #00000065;
+    filter: brightness(85%);
+}
+
+
+/* HEADER */
+/* Fixed top navigation bar */
+#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #0084fd;
+
+    color: #ffffff;
+}
+
+#top-bar .col-container {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#top-bar .col:first-child {
+    margin-right: auto;
+}
+
+#top-bar .col:not(:first-child):not(:last-child) {
+    display: none;
+}
+
+#top-bar .col:last-child {
+    font-size: 1.5rem;
+}
+
+#top-bar img {
+    height: 2.5rem;
+}
+
+
+/* DESKTOP VERSION */
+@media screen and (min-width:769px) {
+    /* HEADER */
+    /* Fixed top navigation bar */
+    #top-bar .col:not(:first-child):not(:last-child) {
+        display: list-item;
+    }
+
+    #top-bar .col:last-child {
+        display: none;
+    }
 }
