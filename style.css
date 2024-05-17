@@ -39,10 +39,7 @@ ul , menu {
 
 /* Visual buttons */
 .visual-button {
-    padding: .75em 1em;
-    border-radius: 2.5em;
-    background-color: #ffffff;
-    color: #000000;
+    border-radius: 100em;
 }
 
 .visual-button:hover {
@@ -87,6 +84,12 @@ ul , menu {
 
 #top-bar img {
     height: 2.5rem;
+}
+
+#top-bar .visual-button {
+    padding: .75em 1em;
+    background-color: var(--header-secondary-color);
+    color: #000000;
 }
 
 
