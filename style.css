@@ -15,13 +15,17 @@ body {
     font-family: Tahoma, sans-serif;
 }
 
-a {
-    color: inherit;
-    text-decoration: inherit;
+section {
+    padding: 4rem 0;
 }
 
 ul , menu {
     list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* Container to horizontal align content */
@@ -34,11 +38,48 @@ ul , menu {
 /* Flex container and items general rules */
 .col-container {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
+    flex-flow: row wrap;
+}
+
+
+/* Grid container and items general rules */
+.cards-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+}
+
+/* Cards rules */
+.card {
+    padding: 2rem;
+    border-radius: 1.25rem;
+
+    color: #00000080;
+    font-weight: 700;
+}
+
+.card-icon {
+    font-size: 5em;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    display: block;
+    font-size: 1.375em;
+    margin-bottom: 1rem;
+}
+
+.card .visual-button {
+    margin-top: 1em;
+    padding: .75em 3em;
+    letter-spacing: .2em;
 }
 
 /* Visual buttons */
 .visual-button {
+    display: inline-block;
     border-radius: 100em;
 }
 
@@ -57,6 +98,7 @@ ul , menu {
 /* Fixed top navigation bar */
 #top-bar {
     position: fixed;
+    z-index: 10;
     top: 0;
     width: 100%;
     padding: 1rem 0;
@@ -70,15 +112,15 @@ ul , menu {
     align-items: center;
 }
 
-#top-bar .col:first-child {
+#top-bar li:first-child {
     margin-right: auto;
 }
 
-#top-bar .col:not(:first-child):not(:last-child) {
+#top-bar li:not(:first-child):not(:last-child) {
     display: none;
 }
 
-#top-bar .col:last-child {
+#top-bar li:last-child {
     font-size: 1.5rem;
 }
 
@@ -93,15 +135,87 @@ ul , menu {
 }
 
 
+/* Jumbo */
+#jumbo {
+    padding-top: 8.5rem;
+}
+
+#jumbo .card {
+    background-color: var(--header-alt-color);
+
+    text-align: center;
+    line-height: 2;
+}
+
+#jumbo .card.double {
+    padding-bottom: 0;
+}
+
+#jumbo .card-icon , #jumbo .card-title {
+    color: var(--header-primary-color);
+}
+
+#jumbo .card .visual-button {
+    background-color: var(--header-primary-color);
+    color: var(--header-secondary-color);
+}
+
+#jumbo img {
+    display: block;
+    width: 100%;
+}
+
+
+
+/* TABLET VERSION */
+@media screen and (min-width:426px) {
+    /* GENERAL */
+    /* Container to horizontal align content */
+    .align-box {
+        width: 95%;
+    }
+
+    /* Grid container and items general rules */
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .card.double {
+        grid-column: span 2;
+    }
+
+    /* HEADER */
+    /* Jumbo */
+    #jumbo .card.double > *:first-child {
+        padding-bottom: 2rem;
+    }
+}
+
+
 /* DESKTOP VERSION */
 @media screen and (min-width:769px) {
     /* HEADER */
     /* Fixed top navigation bar */
-    #top-bar .col:not(:first-child):not(:last-child) {
+    #top-bar li:not(:first-child):not(:last-child) {
         display: list-item;
     }
 
-    #top-bar .col:last-child {
+    #top-bar li:last-child {
         display: none;
+    }
+
+    /* Jumbo */
+    #jumbo .card:first-child {
+        text-align: left;
+    }
+
+    .card.col-container{
+        flex-wrap: nowrap;
+    }
+
+    .card.col-container > *:last-child {
+        min-width: 50%;
+        align-self: flex-end;
     }
 }
