@@ -50,8 +50,12 @@ blockquote em {
     font-weight: 600;
 }
 
-h2 , p , strong {
+p , strong {
     line-height: 2;
+}
+
+q {
+    quotes: none;
 }
 
 a {
@@ -127,6 +131,7 @@ img {
 .visual-button {
     display: inline-block;
     border-radius: 100em;
+    padding: .75em 1em;
 }
 
 .visual-button:hover {
@@ -177,7 +182,6 @@ img {
 }
 
 #top-bar .visual-button {
-    padding: .75em 1em;
     color: #000000;
     background-color: var(--secondary-color);
 }
@@ -221,11 +225,20 @@ main section:nth-child(odd) .card , main section:nth-child(even) {
 
 main h2 {
     font-size: 2rem;
-    line-height: 1.2;
 }
 
 main section:nth-child(even) .section-paragraph {
     color: #000000;
+}
+
+.profile-pic {
+    margin: 0 auto;
+}
+
+.profile-pic img {
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 /* Planning section */
@@ -281,16 +294,9 @@ main section:nth-child(even) .section-paragraph {
     margin-bottom: 2rem;
 }
 
-.card-profile-pic {
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.card-profile-pic img {
+#testimonials .profile-pic img {
     width: 12.5rem;
     height: 12.5rem;
-    object-fit: cover;
 }
 
 .card blockquote em {
@@ -301,6 +307,52 @@ main section:nth-child(even) .section-paragraph {
 #features h2 {
     text-align: center;
     margin-bottom: 4rem;
+}
+
+/* About us section */
+#about-us .align-box {
+    max-width: 950px;
+    gap: 4rem;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+#about-us .section-paragraph {
+    margin: 4rem 0;
+}
+
+#about-us .profile-pic {
+    position: relative;
+    width: fit-content;
+}
+
+#about-us .profile-pic img {
+    width: 15rem;
+    height: 15rem;
+}
+
+#about-us .profile-pic span {
+    position: absolute;
+    top: -3rem;
+    right: -1rem;
+    font-size: 10rem;
+}
+
+#about-us q {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 2rem 0;
+}
+
+#about-us .visual-button {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+
 }
 
 
@@ -351,7 +403,7 @@ main section:nth-child(even) .section-paragraph {
 
 
     /* MAIN */
-    /* Testimonials */
+    /* Testimonials section */
     #testimonials .card {
         flex-wrap: nowrap;
         align-items: center;
@@ -360,6 +412,23 @@ main section:nth-child(even) .section-paragraph {
 
     #testimonials blockquote {
         flex-basis: calc(100% - 14rem);
+    }
+
+    /* About us section */
+    #about-us .col-container {
+        flex-wrap: nowrap;
+    }
+
+    #about-us .col:first-child {
+        overflow-x: auto;
+    }
+
+    #about-us .col:last-child {
+        flex-basis: 17rem;
+    }
+
+    #about-us h2 {
+        font-size: 3.5rem;
     }
 }
 
