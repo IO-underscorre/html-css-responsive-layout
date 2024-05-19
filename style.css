@@ -92,7 +92,6 @@ img {
     border-radius: 1.25rem;
 
     font-weight: 700;
-    color: #00000080;
 }
 
 .card.rounded {
@@ -103,6 +102,10 @@ img {
 .card-icon {
     font-size: 5rem;
     margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #00000080;
 }
 
 .card-title {
@@ -183,10 +186,6 @@ img {
 /* Jumbo */
 #jumbo {
     padding-top: 8.5rem;
-}
-
-#jumbo .cards-container {
-    overflow-x: auto;
 }
 
 #jumbo .card {
@@ -298,6 +297,12 @@ main section:nth-child(even) .section-paragraph {
     margin-top: 1.75rem;
 }
 
+/* Features section */
+#features h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
 
 
 /* TABLET VERSION */
@@ -310,11 +315,12 @@ main section:nth-child(even) .section-paragraph {
 
     /* Grid container and items general rules */
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        overflow-x: auto;
     }
 
-    .card.col-container {
+    .col-container {
         grid-column: span 2;
     }
 
@@ -323,29 +329,36 @@ main section:nth-child(even) .section-paragraph {
         padding: 1.5rem;
     }
 
+
     /* HEADER */
     /* Jumbo */
+    #jumbo .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
     #jumbo .card:first-child {
         text-align: left;
     }
 
-    #jumbo .card.col-container > *:first-child {
+    #jumbo .col:first-child {
         padding-bottom: 1.5rem;
     }
 
-    #jumbo .card.col-container .col:last-child {
+    #jumbo .col:last-child {
         max-width: 50%;
     }
 
+
     /* MAIN */
     /* Testimonials */
-    #testimonials .card.col-container {
+    #testimonials .card {
         flex-wrap: nowrap;
         align-items: center;
         text-align: left;
     }
 
-    #testimonials blockquote.col {
+    #testimonials blockquote {
         flex-basis: calc(100% - 14rem);
     }
 }
@@ -353,6 +366,19 @@ main section:nth-child(even) .section-paragraph {
 
 /* DESKTOP VERSION */
 @media screen and (min-width:769px) {
+    /* GENERAL */
+    /* Container to horizontal align content */
+    .align-box {
+        width: 95%;
+    }
+
+    /* Grid container and items general rules */
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+
     /* HEADER */
     /* Fixed top navigation bar */
     #top-bar .col:not(:first-child):not(:last-child) {
@@ -376,6 +402,7 @@ main section:nth-child(even) .section-paragraph {
         align-self: flex-end;
     }
 
+    
     /* MAIN */
     /* Planning */
     #planning .align-box {
