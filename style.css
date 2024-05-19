@@ -152,12 +152,14 @@ img {
     padding-top: 8.5rem;
 }
 
+#jumbo .cards-container {
+    overflow-x: auto;
+}
+
 #jumbo .card {
     background-color: var(--alt-color);
-    overflow-x: auto;
 
     text-align: center;
-    line-height: 2;
 }
 
 #jumbo .card.col-container {
