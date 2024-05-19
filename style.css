@@ -44,7 +44,7 @@ img {
 
 /* Container to horizontal align content */
 .align-box {
-    width: 90%;
+    width: 85%;
     max-width: 1150px;
     margin: 0 auto;
 }
@@ -200,10 +200,23 @@ img {
         grid-column: span 2;
     }
 
+    /* Cards rules */
+    .card {
+        padding: 1.5rem;
+    }
+
     /* HEADER */
     /* Jumbo */
+    #jumbo .card:first-child {
+        text-align: left;
+    }
+
     #jumbo .card.col-container > *:first-child {
-        padding-bottom: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #jumbo .card.col-container .col:last-child {
+        max-width: 50%;
     }
 }
 
@@ -229,8 +242,11 @@ img {
         flex-wrap: nowrap;
     }
 
-    .card.col-container .col:last-child {
-        min-width: 50%;
+    #jumbo .card.col-container .col {
+        flex-basis: calc(50% - 0.75rem);
+    }
+
+    #jumbo .card.col-container .col:last-child {
         align-self: flex-end;
     }
 }
