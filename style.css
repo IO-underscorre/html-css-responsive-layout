@@ -28,6 +28,28 @@ ul , menu {
     list-style: none;
 }
 
+/* Blockquote quote */
+blockquote p::before {
+    content: "\275D";
+    font-size: 2em;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+blockquote p::after {
+    content: "\275E";
+    font-size: 2em;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* Blockquote author */
+blockquote em {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+}
+
 h2 , p , strong {
     line-height: 2;
 }
@@ -146,6 +168,11 @@ img {
     font-size: 1.5rem;
 }
 
+#top-bar img {
+    width: auto;
+    height: 100%;
+}
+
 #top-bar .visual-button {
     padding: .75em 1em;
     color: #000000;
@@ -181,6 +208,7 @@ img {
     color: var(--secondary-color);
 }
 
+
 /* MAIN */
 main section:nth-child(odd) , main section:nth-child(even) .card {
     background-color: var(--primary-color);
@@ -192,6 +220,15 @@ main section:nth-child(odd) .card , main section:nth-child(even) {
     color: var(--primary-color);
 }
 
+main h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+main section:nth-child(even) .section-paragraph {
+    color: #000000;
+}
+
 /* Planning section */
 #planning .col {
     flex-basis: 100%;
@@ -199,7 +236,6 @@ main section:nth-child(odd) .card , main section:nth-child(even) {
 
 #planning h2 {
     margin: 5rem 0 3.75rem;
-    font-size: 2rem;
 }
 
 #planning .card {
@@ -220,6 +256,46 @@ main section:nth-child(odd) .card , main section:nth-child(even) {
     padding: 1rem 0.9rem 1rem 1.1rem;
 
     color: #000000;
+}
+
+/* Testimonials section */
+#testimonials {
+    text-align: center;
+}
+
+#testimonials b {
+    display: block;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+#testimonials h2 {
+    margin-bottom: 3rem;
+}
+
+#testimonials .section-paragraph {
+    margin-bottom: 3.5rem;
+}
+
+#testimonials .card {
+    margin-bottom: 2rem;
+}
+
+.card-profile-pic {
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card-profile-pic img {
+    width: 12.5rem;
+    height: 12.5rem;
+    object-fit: cover;
+}
+
+.card blockquote em {
+    margin-top: 1.75rem;
 }
 
 
@@ -259,6 +335,18 @@ main section:nth-child(odd) .card , main section:nth-child(even) {
 
     #jumbo .card.col-container .col:last-child {
         max-width: 50%;
+    }
+
+    /* MAIN */
+    /* Testimonials */
+    #testimonials .card.col-container {
+        flex-wrap: nowrap;
+        align-items: center;
+        text-align: left;
+    }
+
+    #testimonials blockquote.col {
+        flex-basis: calc(100% - 14rem);
     }
 }
 
