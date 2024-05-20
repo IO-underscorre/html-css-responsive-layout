@@ -24,6 +24,12 @@ main {
     --secondary-color: #ffffff;
 }
 
+footer {
+    --primary-color: #333333;
+    --secondary-color: #ffffff;
+    --alt-color: #9792e4;
+}
+
 ul , menu {
     list-style: none;
 }
@@ -337,6 +343,7 @@ main section:nth-child(even) .section-paragraph , main section:nth-child(even) [
     position: absolute;
     top: -3rem;
     right: -1rem;
+    z-index: 2;
     font-size: 10rem;
 }
 
@@ -384,6 +391,29 @@ main section:nth-child(even) .section-paragraph , main section:nth-child(even) [
 }
 
 #get-started small a {
+    text-decoration: underline;
+}
+
+
+/* FOOTER */
+footer {
+    padding: 2.75rem 0 2.25rem;
+    background-color: var(--primary-color);
+
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+footer .align-box {
+    max-width: 475px;
+}
+
+footer p {
+    margin-bottom: 4.25rem;
+}
+
+footer a {
+    color: var(--alt-color);
     text-decoration: underline;
 }
 
